@@ -9,51 +9,59 @@ class CustomTheme {
         primary: CustomColors.green,
         onPrimary: CustomColors.green,
         secondary: CustomColors.black,
-        onSecondary: CustomColors.black,
+        onSecondary: CustomColors.blackLight,
         error: CustomColors.error,
         onError: CustomColors.error,
         background: CustomColors.white,
-        onBackground: CustomColors.white,
+        onBackground: CustomColors.black,
         surface: CustomColors.greenLight,
         onSurface: CustomColors.greenLight,
         onTertiary: CustomColors.greenLight,
         outline: CustomColors.black,
         tertiary: CustomColors.gray,
-        surfaceTint: CustomColors.greenLight
+        surfaceTint: CustomColors.greenLight,
       ),
+      shadowColor: CustomColors.black.withOpacity(0.25),
       fontFamily: 'TitilliumWeb',
-      textTheme: const TextTheme(
-        headline1: TextStyle(
+      textTheme: TextTheme(
+        headline1: const TextStyle(
           fontSize: 32,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w800,
+          color: CustomColors.black
         ),
-        headline2: TextStyle(
+        headline2: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: CustomColors.black
+        ),
+        headline3: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w400,
         ),
-        headline3: TextStyle(
-          fontSize: 16,
+       headline4: const TextStyle(
+          fontSize: 18,
           fontWeight: FontWeight.w400,
-        ),
-        headline4: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
+          color: CustomColors.black
         ),
         headline5: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-        ),
-        bodyText1: TextStyle(
           fontSize: 16,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w400,
+          color: CustomColors.black.withOpacity(0.5)
         ),
-        subtitle1: TextStyle(
+        bodyText1: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+          color: CustomColors.black
+        ),
+        subtitle1: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w400,
+          color: CustomColors.black
         ),
-        bodyText2: TextStyle(
+        bodyText2: const TextStyle(
           fontSize: 12,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w600,
+          color: CustomColors.black
         ),
       ));
 }
