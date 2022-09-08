@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       theme: CustomTheme.theme,
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => const HomeView(),
+        '/travel_registration': (BuildContext context) => const MeansOfTransportView(),
       },
       initialRoute: '/home',
     );

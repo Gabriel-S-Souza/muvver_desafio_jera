@@ -23,43 +23,49 @@ class CustomTheme {
       ),
       shadowColor: CustomColors.black.withOpacity(0.25),
       fontFamily: 'TitilliumWeb',
+      toggleableActiveColor: CustomColors.green,
       textTheme: TextTheme(
         headline1: const TextStyle(
-          fontSize: 32,
+          fontSize: 36,
           fontWeight: FontWeight.w800,
           color: CustomColors.black
         ),
         headline2: const TextStyle(
-          fontSize: 20,
+          fontSize: 24,
           fontWeight: FontWeight.w700,
           color: CustomColors.black
         ),
         headline3: const TextStyle(
-          fontSize: 20,
+          fontSize: 24,
           fontWeight: FontWeight.w400,
         ),
        headline4: const TextStyle(
-          fontSize: 18,
+          fontSize: 20,
           fontWeight: FontWeight.w400,
           color: CustomColors.black
         ),
         headline5: TextStyle(
-          fontSize: 16,
+          fontSize: 18,
           fontWeight: FontWeight.w400,
           color: CustomColors.black.withOpacity(0.5)
         ),
+        headline6: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          color: CustomColors.white.withOpacity(0.54)
+        ),
         bodyText1: const TextStyle(
-          fontSize: 16,
+          fontSize: 18,
           fontWeight: FontWeight.w400,
           color: CustomColors.black
         ),
         subtitle1: const TextStyle(
-          fontSize: 14,
+          fontSize: 16,
           fontWeight: FontWeight.w400,
           color: CustomColors.black
         ),
         bodyText2: const TextStyle(
-          fontSize: 12,
+          fontSize: 14,
           fontWeight: FontWeight.w600,
           color: CustomColors.black
         ),

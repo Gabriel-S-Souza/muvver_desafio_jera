@@ -6,6 +6,8 @@ import 'widgets/widgets.dart';
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
 
+  void _goToTravelRegistration(BuildContext context) => Navigator.pushNamed(context, '/travel_registration');
+
   @override
   Widget build(BuildContext context) => SafeArea(
     child: Scaffold(
@@ -89,22 +91,24 @@ class HomeView extends StatelessWidget {
                 child: FractionallySizedBox(
                   heightFactor: 0.74,
                   child: Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Expanded(
                         child: CardFeatureWidget(
                           title: 'Remetente', 
                           subtitle: 'Pra onde quer enviar o seu objeto?', 
-                          image: AssetImage(Assets.box),
+                          image: const AssetImage(Assets.box),
+                          onTap: () {},
                         ),
                       ),
-                      SizedBox(height: 22),
+                      const SizedBox(height: 22),
                       Expanded(
                         child: FractionallySizedBox(
                           widthFactor: 1.0,
                           child: CardFeatureWidget(
                             title: 'Viajante', 
                             subtitle: 'Vai viajar pra onde?', 
-                            image: AssetImage(Assets.truck),
+                            image: const AssetImage(Assets.deliveryTruck),
+                            onTap: () => _goToTravelRegistration(context),
                           ),
                         ),
                       ),

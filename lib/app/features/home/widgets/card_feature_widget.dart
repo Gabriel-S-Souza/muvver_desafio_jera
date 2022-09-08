@@ -6,10 +6,12 @@ class CardFeatureWidget extends StatelessWidget {
     required this.title, 
     required this.subtitle, 
     required this.image, 
+    required this.onTap, 
   }) : super(key: key);
   final String title;
   final String subtitle;
   final ImageProvider image;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
@@ -25,7 +27,7 @@ class CardFeatureWidget extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         highlightColor: Theme.of(context).colorScheme.onSecondary,
         splashColor: Theme.of(context).colorScheme.onSecondary,
         focusColor: Colors.transparent,
