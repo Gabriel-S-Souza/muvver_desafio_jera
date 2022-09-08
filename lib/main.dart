@@ -9,5 +9,7 @@ void main() {
     statusBarIconBrightness: Brightness.dark
   ));
   
+  ServiceLocator.setupLocator();
+
   runApp(const MyApp());
 }

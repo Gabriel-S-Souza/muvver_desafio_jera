@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../models/models.dart';
+import '../../../../app.dart';
+import '../../../../core/core.dart';
+import '../../models/models.dart';
 
 class ListOptionsWidget extends StatelessWidget {
   const ListOptionsWidget({
     Key? key, 
     required this.title, 
-    required this.options
+    required this.options,
+    required this.controller
   }) : super(key: key);
   final String title;
   final List<OptionItemModel> options;
+  final TravelRegistrationController controller;
 
   @override
   Widget build(BuildContext context) => ListView(
@@ -27,7 +32,8 @@ class ListOptionsWidget extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => ListTile(
-            onTap: () {},
+            onTap: () => controller.setModeOfTranport(
+                options[index].transportType),
             contentPadding: const EdgeInsets
                 .symmetric(vertical: 12, horizontal: 0),
             title: Row(
@@ -40,10 +46,12 @@ class ListOptionsWidget extends StatelessWidget {
                     color: Theme.of(context).colorScheme.secondary
                   ),
                 ),
-                Radio<int>(
-                  value: index, 
-                  groupValue: 0, 
-                  onChanged: (value) {}
+                Observer(
+                  builder: (context) => Radio<MeansOfTransport>(
+                      value: options[index].transportType, 
+                      groupValue: controller.modeOfTranport, 
+                      onChanged: controller.setModeOfTranport
+                    )
                 )
               ],
             ),

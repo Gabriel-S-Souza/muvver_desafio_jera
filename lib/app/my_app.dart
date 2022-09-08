@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'core/core.dart';
-import 'features/fetures.dart';
+import 'features/features.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: CustomTheme.theme,
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => const HomeView(),
-        '/travel_registration': (BuildContext context) => const MeansOfTransportView(),
+        '/travel_registration': (BuildContext context) => MeansOfTransportPage(),
       },
       initialRoute: '/home',
     );

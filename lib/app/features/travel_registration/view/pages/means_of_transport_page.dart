@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../core/core.dart';
-import 'models/models.dart';
-import 'widgets/widgets.dart';
+import 'package:get_it/get_it.dart';
+import '../../../../app.dart';
+import '../../../../core/core.dart';
+import '../../models/models.dart';
+import '../widgets/widgets.dart';
 
-class MeansOfTransportView extends StatelessWidget {
-  const MeansOfTransportView({Key? key}) : super(key: key);
+class MeansOfTransportPage extends StatelessWidget {
+  MeansOfTransportPage({Key? key}) : super(key: key);
+
+  final TravelRegistrationController _controller =
+      GetIt.I.get<TravelRegistrationController>();
 
   @override
   Widget build(BuildContext context)  => SafeArea(
@@ -23,7 +28,8 @@ class MeansOfTransportView extends StatelessWidget {
           ),
           child: ListOptionsWidget(
             title: 'Transporte',
-            options: _options
+            options: _options,
+            controller: _controller,
           ),
         ),
         bottomNavigationBar: BottomFixedWidget(
@@ -39,38 +45,47 @@ class MeansOfTransportView extends StatelessWidget {
 final List<OptionItemModel> _options = [
     OptionItemModel(
       pathImage: Assets.car,
-      title: 'Carro'
+      title: MeansOfTransport.car.name,
+      transportType: MeansOfTransport.car,
     ),
     OptionItemModel(
       pathImage: Assets.plane,
-      title: 'Avião'
+      title: MeansOfTransport.plane.name,
+      transportType: MeansOfTransport.plane,
     ),
     OptionItemModel(
       pathImage: Assets.truck,
-      title: 'Caminhão'
+      title: MeansOfTransport.truck.name,
+      transportType: MeansOfTransport.truck,
     ),
     OptionItemModel(
       pathImage: Assets.van,
-      title: 'Van'
+      title: MeansOfTransport.van.name,
+      transportType: MeansOfTransport.van,
     ),
     OptionItemModel(
       pathImage: Assets.motorcycle,
-      title: 'Moto'
+      title: MeansOfTransport.motorcycle.name,
+      transportType: MeansOfTransport.motorcycle,
     ),
     OptionItemModel(
       pathImage: Assets.bike,
-      title: 'Bicicleta'
+      title: MeansOfTransport.bike.name,
+      transportType: MeansOfTransport.bike,
     ),
     OptionItemModel(
       pathImage: Assets.train,
-      title: 'Trem'
+      title: MeansOfTransport.train.name,
+      transportType: MeansOfTransport.train,
     ),
     OptionItemModel(
       pathImage: Assets.bus,
-      title: 'Ônibus'
+      title: MeansOfTransport.bus.name,
+      transportType: MeansOfTransport.bus,
     ),
     OptionItemModel(
       pathImage: Assets.boat,
-      title: 'Embaracação'
+      title: MeansOfTransport.boat.name,
+      transportType: MeansOfTransport.boat,
     ),
   ];
