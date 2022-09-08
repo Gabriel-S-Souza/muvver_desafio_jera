@@ -32,7 +32,7 @@ class ListOptionsWidget extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => ListTile(
-            onTap: () => controller.setModeOfTranport(
+            onTap: () => controller.setTransportType(
                 options[index].transportType),
             contentPadding: const EdgeInsets
                 .symmetric(vertical: 12, horizontal: 0),
@@ -49,8 +49,8 @@ class ListOptionsWidget extends StatelessWidget {
                 Observer(
                   builder: (context) => Radio<MeansOfTransport>(
                       value: options[index].transportType, 
-                      groupValue: controller.modeOfTranport, 
-                      onChanged: controller.setModeOfTranport
+                      groupValue: controller.transportType, 
+                      onChanged: controller.setTransportType
                     )
                 )
               ],

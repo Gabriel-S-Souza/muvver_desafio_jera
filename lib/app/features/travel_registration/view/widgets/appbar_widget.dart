@@ -10,14 +10,15 @@ class AppBarWidget extends AppBar {
     bool showAction = false,
     String? sectionTitle,
     double? bottomHeight,
-    Widget? bottom
+    Widget? bottom,
+    VoidCallback? onPressed
     }) : super(
     key: key,
     surfaceTintColor: Theme.of(context).colorScheme.secondary,
     backgroundColor: Theme.of(context).colorScheme.secondary,
-    elevation: 0,
+    elevation: 4,
     leading: IconButton(
-      onPressed: () => Navigator.pop(context),
+      onPressed: onPressed ?? () => Navigator.pop(context),
       icon: Icon(
         backIcon,
         color: Theme.of(context).colorScheme.background,
@@ -25,7 +26,10 @@ class AppBarWidget extends AppBar {
     ),
     title: Text(
       title,
-      style: Theme.of(context).textTheme.headline6,
+      style: Theme.of(context).textTheme.headline6!.copyWith(
+        fontWeight: FontWeight.w400,
+        color: Theme.of(context).colorScheme.background.withOpacity(0.54)
+      ),
     ),
     centerTitle: true,
     actions: showAction 
@@ -47,19 +51,26 @@ class AppBarWidget extends AppBar {
           preferredSize: Size.fromHeight(
             bottomHeight ?? MediaQuery.of(context).size.height * 0.1
           ),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                child: Text(
-                  sectionTitle,
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
-                    color: Theme.of(context).colorScheme.background
-                  )
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: bottomHeight 
+                  ?? MediaQuery.of(context).size.height * 0.1
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: Text(
+                    sectionTitle,
+                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                      color: Theme.of(context).colorScheme.background
+                    )
+                  ),
                 ),
-              ),
-              bottom ?? const SizedBox()
-            ],
+                Expanded(child: bottom ??  const SizedBox())
+              ],
+            ),
           )
         )
         : null

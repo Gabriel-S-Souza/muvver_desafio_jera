@@ -5,8 +5,8 @@ import '../../../../core/core.dart';
 import '../../models/models.dart';
 import '../widgets/widgets.dart';
 
-class MeansOfTransportPage extends StatelessWidget {
-  MeansOfTransportPage({Key? key}) : super(key: key);
+class MeansOfTransportScreen extends StatelessWidget {
+  MeansOfTransportScreen({Key? key}) : super(key: key);
 
   final TravelRegistrationController _controller =
       GetIt.I.get<TravelRegistrationController>();
@@ -19,6 +19,11 @@ class MeansOfTransportPage extends StatelessWidget {
           title: 'Viajante',
           sectionTitle: 'Qual será o meio de transporte da sua viagem?',
           backIcon: Icons.close,
+          onPressed: () => Navigator.pushNamedAndRemoveUntil(
+            context, 
+            '/home', 
+            (route) => false
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.only(
@@ -34,7 +39,7 @@ class MeansOfTransportPage extends StatelessWidget {
         ),
         bottomNavigationBar: BottomFixedWidget(
           child: ButtonAppWidget(
-            onPressed: () {},
+            onPressed: () => _controller.goToTravelPath(context),
             title: 'Avançar' 
           ),
         )

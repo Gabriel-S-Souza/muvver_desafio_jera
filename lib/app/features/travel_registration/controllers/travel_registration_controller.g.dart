@@ -10,20 +10,36 @@ part of 'travel_registration_controller.dart';
 
 mixin _$TravelRegistrationController
     on TravelRegistrationControllerBase, Store {
-  late final _$modeOfTranportAtom = Atom(
-      name: 'TravelRegistrationControllerBase.modeOfTranport',
-      context: context);
+  late final _$transportTypeAtom = Atom(
+      name: 'TravelRegistrationControllerBase.transportType', context: context);
 
   @override
-  MeansOfTransport get modeOfTranport {
-    _$modeOfTranportAtom.reportRead();
-    return super.modeOfTranport;
+  MeansOfTransport get transportType {
+    _$transportTypeAtom.reportRead();
+    return super.transportType;
   }
 
   @override
-  set modeOfTranport(MeansOfTransport value) {
-    _$modeOfTranportAtom.reportWrite(value, super.modeOfTranport, () {
-      super.modeOfTranport = value;
+  set transportType(MeansOfTransport value) {
+    _$transportTypeAtom.reportWrite(value, super.transportType, () {
+      super.transportType = value;
+    });
+  }
+
+  late final _$tabItemSelectedAtom = Atom(
+      name: 'TravelRegistrationControllerBase.tabItemSelected',
+      context: context);
+
+  @override
+  ItemSelected get tabItemSelected {
+    _$tabItemSelectedAtom.reportRead();
+    return super.tabItemSelected;
+  }
+
+  @override
+  set tabItemSelected(ItemSelected value) {
+    _$tabItemSelectedAtom.reportWrite(value, super.tabItemSelected, () {
+      super.tabItemSelected = value;
     });
   }
 
@@ -32,12 +48,24 @@ mixin _$TravelRegistrationController
           name: 'TravelRegistrationControllerBase', context: context);
 
   @override
-  void setModeOfTranport(MeansOfTransport? value) {
+  void setTransportType(MeansOfTransport? value) {
+    final _$actionInfo = _$TravelRegistrationControllerBaseActionController
+        .startAction(name: 'TravelRegistrationControllerBase.setTransportType');
+    try {
+      return super.setTransportType(value);
+    } finally {
+      _$TravelRegistrationControllerBaseActionController
+          .endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setTabItemSelected(ItemSelected value) {
     final _$actionInfo =
         _$TravelRegistrationControllerBaseActionController.startAction(
-            name: 'TravelRegistrationControllerBase.setModeOfTranport');
+            name: 'TravelRegistrationControllerBase.setTabItemSelected');
     try {
-      return super.setModeOfTranport(value);
+      return super.setTabItemSelected(value);
     } finally {
       _$TravelRegistrationControllerBaseActionController
           .endAction(_$actionInfo);
@@ -47,7 +75,8 @@ mixin _$TravelRegistrationController
   @override
   String toString() {
     return '''
-modeOfTranport: ${modeOfTranport}
+transportType: ${transportType},
+tabItemSelected: ${tabItemSelected}
     ''';
   }
 }

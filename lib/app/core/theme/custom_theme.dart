@@ -49,10 +49,10 @@ class CustomTheme {
           fontWeight: FontWeight.w400,
           color: CustomColors.black.withOpacity(0.5)
         ),
-        headline6: TextStyle(
+        headline6: const TextStyle(
           fontSize: 18,
-          fontWeight: FontWeight.w400,
-          color: CustomColors.white.withOpacity(0.54)
+          fontWeight: FontWeight.w700,
+          color: CustomColors.white
         ),
         bodyText1: const TextStyle(
           fontSize: 18,

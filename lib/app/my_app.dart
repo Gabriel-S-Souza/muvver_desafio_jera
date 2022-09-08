@@ -11,8 +11,9 @@ class MyApp extends StatelessWidget {
       title: 'muvver',
       theme: CustomTheme.theme,
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => const HomeView(),
-        '/travel_registration': (BuildContext context) => MeansOfTransportPage(),
+        '/home': (BuildContext context) => HomeView(),
+        '/travel_registration': (BuildContext context) => MeansOfTransportScreen(),
+        '/travel_path': (BuildContext context) => TravelPathScreen(),
       },
       initialRoute: '/home',
     );

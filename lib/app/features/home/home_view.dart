@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../core/core.dart';
 import 'widgets/widgets.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  HomeView({Key? key}) : super(key: key) {
+  _setStatusBarColor();
+  }
+
+  void _setStatusBarColor() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarColor: CustomColors.white,
+    statusBarIconBrightness: Brightness.dark
+  ));
+  }
 
   void _goToTravelRegistration(BuildContext context) => Navigator.pushNamed(context, '/travel_registration');
 
