@@ -20,6 +20,20 @@ dependencies:
   # dependencies injection
   get_it: ^7.2.0
 
+  # layoult utilities
+  auto_size_text: ^3.0.0
+
+  # calendar
+  flutter_localizations:
+    sdk: flutter
+  flutter_rounded_date_picker:
+    git:
+      url: https://github.com/Gabriel-S-Souza/flutter_rounded_date_picker
+      ref: develop
+
+  # formating
+  intl: ^0.17.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
