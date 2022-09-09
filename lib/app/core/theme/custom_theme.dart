@@ -27,7 +27,8 @@ class CustomTheme {
       textTheme: TextTheme(
         headline1: const TextStyle(
           fontSize: 36,
-          fontWeight: FontWeight.w800,
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w600,
           color: CustomColors.black
         ),
         headline2: const TextStyle(

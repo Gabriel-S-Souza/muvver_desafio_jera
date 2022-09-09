@@ -77,7 +77,12 @@ class _TabItem extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Text(
             title,
-            style: Theme.of(context).textTheme.headline6,
+            style: isSelected
+                ? Theme.of(context).textTheme.headline6
+                : Theme.of(context).textTheme.headline6!.copyWith(
+                  color: Theme.of(context)
+                      .colorScheme.background.withOpacity(0.5)
+                )
           ),
         ),
       ),

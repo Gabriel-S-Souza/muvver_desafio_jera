@@ -39,9 +39,10 @@ class AppBarWidget extends AppBar {
                 .pushNamedAndRemoveUntil(context, '/home', (route) => false),
             child: Text(
               'Cancelar',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.background
-              ),
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                color: Theme.of(context).colorScheme.background,
+                fontWeight: FontWeight.w700,
+              )
             )
           ),
         ]
