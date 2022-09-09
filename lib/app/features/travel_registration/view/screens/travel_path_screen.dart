@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -106,10 +108,34 @@ class _TravelPathForm extends StatelessWidget {
               ),
             ],
           ),
-          const TextFieldWidget(
+          TextFieldSuggestionWidget(
+            controller: controller.originController,
             label: 'Cidade de origem',
-            margin: EdgeInsets.only(top: 24, bottom: 12),
+            margin: const EdgeInsets.only(top: 24, bottom: 12),
             preffixIcon: Icons.search,
+            itemBuilder: (context, suggestion) => ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.8
+              ),
+              child: ListTile(
+                title: Text(
+                  suggestion,
+                  style: Theme.of(context).textTheme.bodyText1,
+                  maxLines: 1,
+                ),
+                leading: Icon(
+                    Icons.location_on,
+                    color: Theme.of(context).colorScheme.tertiary,
+                  ),
+              )
+            ),
+            onSuggestionSelected: (value) {
+              controller.originController.text = value;
+            },
+            suggestionsCallback: (value) async {
+              await controller.autoCompleteSearch(value);
+              return controller.suggestions;
+            }
           ),
           controller.midpoints.isNotEmpty
               ? _MidpointList(
@@ -117,10 +143,35 @@ class _TravelPathForm extends StatelessWidget {
                 onRemove: controller.removeMindpoint,
               )
               : const SizedBox(),
-          const TextFieldWidget(
+          TextFieldSuggestionWidget(
+            controller: controller.destinyController,
             label: 'Cidade de destino',
-            margin: EdgeInsets.only(top: 12, bottom: 26),
+            margin: const EdgeInsets.only(top: 12, bottom: 26),
             preffixIcon: Icons.search,
+            onChanged: controller.autoCompleteSearch,
+            itemBuilder: (context, suggestion) => ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.8
+              ),
+              child: ListTile(
+                title: Text(
+                  suggestion,
+                  style: Theme.of(context).textTheme.bodyText1,
+                  maxLines: 1,
+                ),
+                leading: Icon(
+                    Icons.location_on,
+                    color: Theme.of(context).colorScheme.tertiary,
+                  ),
+              )
+            ),
+            onSuggestionSelected: (value) {
+              controller.destinyController.text = value;
+            },
+            suggestionsCallback: (value) async {
+              await controller.autoCompleteSearch(value);
+              return controller.suggestions;
+            }
           ),
           Ink(
             padding: const EdgeInsets.symmetric(horizontal: 8),

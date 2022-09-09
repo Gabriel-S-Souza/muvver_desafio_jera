@@ -1,9 +1,11 @@
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 
-class TextFieldWidget extends StatefulWidget {
-  const TextFieldWidget({
+class TextFieldSuggestionWidget extends StatefulWidget {
+  const TextFieldSuggestionWidget({
     Key? key,
     this.errorMessageAsync,
     this.asyncValidate,
@@ -29,6 +31,10 @@ class TextFieldWidget extends StatefulWidget {
     this.height, 
     this.readOnly = false, 
     this.margin, 
+    required 
+    this.suggestionsCallback, 
+    required this.itemBuilder, 
+    required this.onSuggestionSelected,
   }) : super(key: key);
   final bool? enable;
   final String placeholder;
@@ -54,13 +60,17 @@ class TextFieldWidget extends StatefulWidget {
   final double? height;
   final bool readOnly;
   final EdgeInsetsGeometry? margin;
+  final Widget Function(BuildContext, dynamic) itemBuilder;
+  final void Function(String) onSuggestionSelected;
+  final FutureOr<Iterable<String>> Function(String) suggestionsCallback;
 
   @override
   // ignore: library_private_types_in_public_api
-  _TextFieldWidgetState createState() => _TextFieldWidgetState();
+  _TextFieldSuggestionWidgetState createState() => 
+      _TextFieldSuggestionWidgetState();
 }
 
-class _TextFieldWidgetState extends State<TextFieldWidget> {
+class _TextFieldSuggestionWidgetState extends State<TextFieldSuggestionWidget> {
 
   @override
   Widget build(BuildContext context) => Container(
@@ -68,8 +78,12 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
     margin: widget.margin,
     padding: widget.containerPadding 
         ?? const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-    child: TextFormField(
-      textCapitalization: widget.textCapitalization,
+    child: TypeAheadField<String>(
+      itemBuilder:  widget.itemBuilder,
+      onSuggestionSelected:  widget.onSuggestionSelected,
+      suggestionsCallback:  widget.suggestionsCallback,
+      textFieldConfiguration: TextFieldConfiguration(
+        textCapitalization: widget.textCapitalization,
       maxLength: widget.max,
       inputFormatters: widget.inputFormatters,
       controller: widget.controller,
@@ -111,6 +125,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         ),
         suffixIcon: widget.suffix,
         errorText: widget.errorMessageAsync,
+      ),
       ),
     ),
   );

@@ -20,8 +20,13 @@ dependencies:
   # dependencies injection
   get_it: ^7.2.0
 
+  # places
+  google_place: ^0.4.7
+  uuid: ^3.0.6
+
   # layoult utilities
   auto_size_text: ^3.0.0
+  flutter_typeahead: ^4.1.0
 
   # calendar
   flutter_localizations:
