@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_place/google_place.dart';
@@ -24,6 +23,8 @@ abstract class TravelRegistrationControllerBase
   final TextEditingController originController = TextEditingController();
 
   final TextEditingController destinyController = TextEditingController();
+
+  final TextEditingController midpointController = TextEditingController();
 
   String startDate = '';
 
@@ -50,14 +51,21 @@ abstract class TravelRegistrationControllerBase
   ObservableList<String> midpoints = ObservableList<String>();
 
   @action
-  void addMidpoint(String value) => 
-    midpoints.add(value);
+  void addMidpoint(BuildContext context, String value) {
+    final String shortedValue = shortPlace(value);
+
+    midpoints.add(shortedValue);
+    midpointController.text = '';
+    Navigator.pop(context);
+  }
   
   @action
   void removeMindpoint(String value) => 
     midpoints.remove(value);
   
   void goToTravelPath(BuildContext context) => Navigator.of(context).pushNamed('/travel_path');
+  
+  void goToMidpointForm(BuildContext context) => Navigator.of(context).pushNamed('/midpoint_form');
 
   void onChangedPlaces(String value) {
     if (value.isNotEmpty) {
@@ -88,5 +96,11 @@ abstract class TravelRegistrationControllerBase
     });
   }
 
+  String shortPlace(String value) => value.split(',')[0];
+
   List<String> get suggestions => _suggestions;
+
+  String get origin => shortPlace(originController.text);
+
+  String get destiny => shortPlace(destinyController.text);
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'dart:developer';
 
 import 'package:auto_size_text/auto_size_text.dart';
@@ -43,7 +45,7 @@ class TravelPathScreen extends StatelessWidget {
           bottomNavigationBar: BottomFixedWidget(
             child: ButtonAppWidget(
               onPressed: () {},
-              title: 'Avançar' 
+              title: 'Confirmar' 
             ),
           )
         ),
@@ -148,7 +150,6 @@ class _TravelPathForm extends StatelessWidget {
             label: 'Cidade de destino',
             margin: const EdgeInsets.only(top: 12, bottom: 26),
             preffixIcon: Icons.search,
-            onChanged: controller.autoCompleteSearch,
             itemBuilder: (context, suggestion) => ConstrainedBox(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.8
@@ -177,7 +178,7 @@ class _TravelPathForm extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: InkWell(
               borderRadius: BorderRadius.circular(28),
-              onTap: () => controller.addMidpoint('Castanhal, PA'),
+              onTap: () => controller.goToMidpointForm(context),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -216,7 +217,8 @@ class _TravelPathForm extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          const SizedBox(height: 50)
         ]
       )
   );
@@ -246,6 +248,7 @@ class _MidpointList extends StatelessWidget {
                     color: Theme.of(context).colorScheme.tertiary,
                     size: 30,
                   ),
+                  const SizedBox(width: 8),
                   Text(
                     midpoints[index],
                     style: Theme.of(context).textTheme.bodyText1,

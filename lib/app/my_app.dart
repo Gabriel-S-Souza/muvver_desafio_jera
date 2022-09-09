@@ -21,8 +21,9 @@ class MyApp extends StatelessWidget {
       ],
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => HomeView(),
-        '/travel_registration': (BuildContext context) => MeansOfTransportScreen(),
+        '/means_of_transport': (BuildContext context) => MeansOfTransportScreen(),
         '/travel_path': (BuildContext context) => TravelPathScreen(),
+        '/midpoint_form': (BuildContext context) => MidpointScreen(),
       },
       initialRoute: '/home',
     );

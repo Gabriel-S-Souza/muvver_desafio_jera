@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
   ));
   }
 
-  void _goToTravelRegistration(BuildContext context) => Navigator.pushNamed(context, '/travel_registration');
+  void _goToTravelRegistration(BuildContext context) => Navigator.pushNamed(context, '/means_of_transport');
 
   @override
   Widget build(BuildContext context) => SafeArea(
