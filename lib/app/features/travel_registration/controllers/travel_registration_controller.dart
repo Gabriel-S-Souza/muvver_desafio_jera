@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:google_place/google_place.dart';
-import 'package:mobx/mobx.dart';
 
+import '../../../app.dart';
 import '../../../core/core.dart';
 import '../../../infra/infra.dart';
 import '../view/widgets/widgets.dart';

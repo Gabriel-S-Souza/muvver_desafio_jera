@@ -22,7 +22,6 @@ dependencies:
 
   # places
   google_place: ^0.4.7
-  uuid: ^3.0.6
 
   # layoult utilities
   auto_size_text: ^3.0.0

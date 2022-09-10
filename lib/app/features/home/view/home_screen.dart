@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../core/core.dart';
-import '../widgets/widgets.dart';
+import 'widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key) {
@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   void _setStatusBarColor() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-      statusBarColor: CustomColors.white,
+      statusBarColor: ColorsApp.white,
     statusBarIconBrightness: Brightness.dark
   ));
   }

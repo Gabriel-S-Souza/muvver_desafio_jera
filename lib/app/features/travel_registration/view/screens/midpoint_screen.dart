@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 
 import '../../../../app.dart';
 import '../widgets/widgets.dart';
@@ -86,6 +85,7 @@ class MidpointScreen extends StatelessWidget {
               ),
               onSuggestionSelected: (value) {
                 _controller.midpointController.text = value;
+                FocusScope.of(context).unfocus();
               },
               suggestionsCallback: (value) async {
                 await _controller.autoCompleteSearch(value);

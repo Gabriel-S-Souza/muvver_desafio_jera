@@ -1,6 +1,4 @@
-import 'package:get_it/get_it.dart';
-
-import '../features/features.dart';
+import '../app.dart';
 
 class ServiceLocator {
   static Future<void> setupLocator() async {

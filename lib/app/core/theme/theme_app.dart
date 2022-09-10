@@ -3,38 +3,38 @@ import 'package:flutter/material.dart';
 class CustomTheme {
   static ThemeData theme = ThemeData(
       useMaterial3: true,
-      scaffoldBackgroundColor: CustomColors.white,
+      scaffoldBackgroundColor: ColorsApp.white,
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
-        primary: CustomColors.green,
-        onPrimary: CustomColors.green,
-        secondary: CustomColors.black,
-        onSecondary: CustomColors.blackLight,
-        error: CustomColors.error,
-        onError: CustomColors.error,
-        background: CustomColors.white,
-        onBackground: CustomColors.black,
-        surface: CustomColors.greenLight,
-        onSurface: CustomColors.greenLight,
-        onTertiary: CustomColors.greenLight,
-        outline: CustomColors.black,
-        tertiary: CustomColors.gray,
-        surfaceTint: CustomColors.greenLight,
+        primary: ColorsApp.green,
+        onPrimary: ColorsApp.green,
+        secondary: ColorsApp.black,
+        onSecondary: ColorsApp.blackLight,
+        error: ColorsApp.error,
+        onError: ColorsApp.error,
+        background: ColorsApp.white,
+        onBackground: ColorsApp.black,
+        surface: ColorsApp.greenLight,
+        onSurface: ColorsApp.greenLight,
+        onTertiary: ColorsApp.greenLight,
+        outline: ColorsApp.black,
+        tertiary: ColorsApp.gray,
+        surfaceTint: ColorsApp.greenLight,
       ),
-      shadowColor: CustomColors.black.withOpacity(0.25),
+      shadowColor: ColorsApp.black.withOpacity(0.25),
       fontFamily: 'TitilliumWeb',
-      toggleableActiveColor: CustomColors.green,
+      toggleableActiveColor: ColorsApp.green,
       textTheme: TextTheme(
         headline1: const TextStyle(
           fontSize: 36,
           fontFamily: 'Roboto',
           fontWeight: FontWeight.w600,
-          color: CustomColors.black
+          color: ColorsApp.black
         ),
         headline2: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w700,
-          color: CustomColors.black
+          color: ColorsApp.black
         ),
         headline3: const TextStyle(
           fontSize: 24,
@@ -43,37 +43,37 @@ class CustomTheme {
        headline4: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w400,
-          color: CustomColors.black
+          color: ColorsApp.black
         ),
         headline5: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w400,
-          color: CustomColors.black.withOpacity(0.5)
+          color: ColorsApp.black.withOpacity(0.5)
         ),
         headline6: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w700,
-          color: CustomColors.white
+          color: ColorsApp.white
         ),
         bodyText1: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w400,
-          color: CustomColors.black
+          color: ColorsApp.black
         ),
         subtitle1: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
-          color: CustomColors.black
+          color: ColorsApp.black
         ),
         bodyText2: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w600,
-          color: CustomColors.black
+          color: ColorsApp.black
         ),
       ));
 }
 
-class CustomColors {
+class ColorsApp {
   static const Color white = Color(0xFFFFFFFF);
   static const Color green = Color(0xFF16A45C);
   static const Color greenLight = Color(0xFF24B96E);
