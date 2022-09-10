@@ -44,7 +44,7 @@ class TravelPathScreen extends StatelessWidget {
           ),
           bottomNavigationBar: BottomFixedWidget(
             child: ButtonAppWidget(
-              onPressed: () {},
+              onPressed: () => _controller.goToVolume(context),
               title: 'Confirmar' 
             ),
           )

@@ -42,6 +42,13 @@ abstract class TravelRegistrationControllerBase
       transportType = value ?? MeansOfTransport.car;
 
   @observable
+  Volume volumeType = Volume.envelope;
+
+  @action
+  void setVolumeType(Volume? value) => 
+      volumeType = value ?? Volume.envelope;
+
+  @observable
   ItemSelected tabItemSelected = ItemSelected.routes;
 
   @action
@@ -66,6 +73,8 @@ abstract class TravelRegistrationControllerBase
   void goToTravelPath(BuildContext context) => Navigator.of(context).pushNamed('/travel_path');
   
   void goToMidpointForm(BuildContext context) => Navigator.of(context).pushNamed('/midpoint_form');
+
+  void goToVolume(BuildContext context) => Navigator.of(context).pushNamed('/volume');
 
   void onChangedPlaces(String value) {
     if (value.isNotEmpty) {

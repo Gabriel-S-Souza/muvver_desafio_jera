@@ -13,3 +13,16 @@ enum MeansOfTransport {
 
   final String name;
 }
+
+enum Volume {
+  envelope(name: 'Envelope'),
+  book(name: 'Livro'),
+  shoeBox(name: 'Caixa de Sapato'),
+  schoolbag(name: 'Mochila'),
+  bigSuitcase(name: 'Mala Grande'),
+  bigBox(name: 'Caixa grande');
+
+  const Volume({required this.name});
+
+  final String name;
+}

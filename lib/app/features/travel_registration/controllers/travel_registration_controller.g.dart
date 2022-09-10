@@ -26,6 +26,22 @@ mixin _$TravelRegistrationController
     });
   }
 
+  late final _$volumeTypeAtom = Atom(
+      name: 'TravelRegistrationControllerBase.volumeType', context: context);
+
+  @override
+  Volume get volumeType {
+    _$volumeTypeAtom.reportRead();
+    return super.volumeType;
+  }
+
+  @override
+  set volumeType(Volume value) {
+    _$volumeTypeAtom.reportWrite(value, super.volumeType, () {
+      super.volumeType = value;
+    });
+  }
+
   late final _$tabItemSelectedAtom = Atom(
       name: 'TravelRegistrationControllerBase.tabItemSelected',
       context: context);
@@ -60,6 +76,18 @@ mixin _$TravelRegistrationController
   }
 
   @override
+  void setVolumeType(Volume? value) {
+    final _$actionInfo = _$TravelRegistrationControllerBaseActionController
+        .startAction(name: 'TravelRegistrationControllerBase.setVolumeType');
+    try {
+      return super.setVolumeType(value);
+    } finally {
+      _$TravelRegistrationControllerBaseActionController
+          .endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void setTabItemSelected(ItemSelected value) {
     final _$actionInfo =
         _$TravelRegistrationControllerBaseActionController.startAction(
@@ -73,9 +101,34 @@ mixin _$TravelRegistrationController
   }
 
   @override
+  void addMidpoint(BuildContext context, String value) {
+    final _$actionInfo = _$TravelRegistrationControllerBaseActionController
+        .startAction(name: 'TravelRegistrationControllerBase.addMidpoint');
+    try {
+      return super.addMidpoint(context, value);
+    } finally {
+      _$TravelRegistrationControllerBaseActionController
+          .endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void removeMindpoint(String value) {
+    final _$actionInfo = _$TravelRegistrationControllerBaseActionController
+        .startAction(name: 'TravelRegistrationControllerBase.removeMindpoint');
+    try {
+      return super.removeMindpoint(value);
+    } finally {
+      _$TravelRegistrationControllerBaseActionController
+          .endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 transportType: ${transportType},
+volumeType: ${volumeType},
 tabItemSelected: ${tabItemSelected}
     ''';
   }

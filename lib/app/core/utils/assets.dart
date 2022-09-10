@@ -12,4 +12,10 @@ class Assets {
   static const String train = 'assets/images/ic_trem@2x.png';
   static const String bus = 'assets/images/ic_bus@2x.png';
   static const String boat = 'assets/images/ic_barco@2x.png';
+  static const String schoolbag = 'assets/images/ic_backpack@2x.png';
+  static const String bigBox = 'assets/images/ic_big_box@2x.png';
+  static const String book = 'assets/images/ic_book@2x.png';
+  static const String envelope = 'assets/images/ic_email@2x.png';
+  static const String suitcase = 'assets/images/ic_mala@2x.png';
+  static const String shoeBox = 'assets/images/ic_box@2x.png';
 }
