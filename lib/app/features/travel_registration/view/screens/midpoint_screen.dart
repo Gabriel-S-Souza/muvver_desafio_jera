@@ -104,10 +104,12 @@ class MidpointScreen extends StatelessWidget {
         ),
         bottomNavigationBar: BottomFixedWidget(
           child: ButtonAppWidget(
-            onPressed: () => _controller.addMidpoint(
-              context,
-              _controller.midpointController.text,
-            ),
+            onPressed: _controller.midpointController.text.isNotEmpty
+                ? () => _controller.addMidpoint(
+                    context,
+                    _controller.midpointController.text,
+                  )
+                : null,
             title: 'Confirmar' 
           ),
         )
