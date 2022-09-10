@@ -6,8 +6,8 @@ import '../../../../core/core.dart';
 import '../../models/models.dart';
 import '../widgets/widgets.dart';
 
-class VolumeScreen extends StatelessWidget {
-  VolumeScreen({Key? key}) : super(key: key);
+class WeightScreen extends StatelessWidget {
+  WeightScreen({Key? key}) : super(key: key);
 
   final TravelRegistrationController _controller =
       GetIt.I.get<TravelRegistrationController>();
@@ -18,7 +18,7 @@ class VolumeScreen extends StatelessWidget {
         appBar: AppBarWidget(
           context: context,
           title: 'Ser um Muvver',
-          sectionTitle: '''O volume que você pode deslocar tem tamanho similar a quê?''',
+          sectionTitle: 'Qual o peso do volume?',
           showAction: true,
         ),
         body: Padding(
@@ -32,15 +32,15 @@ class VolumeScreen extends StatelessWidget {
                 title: 'Tamanho',
                 options: _options,
                 onChanged: (value) {
-                  _controller.setVolumeType(value);
+                  _controller.setWeightType(value);
                 },
-                groupValue: _controller.volumeType,
+                groupValue: _controller.weight,
               )
           ),
         ),
         bottomNavigationBar: BottomFixedWidget(
           child: ButtonAppWidget(
-            onPressed: () => _controller.goToWeight(context),
+            onPressed: () {},
             title: 'Avançar' 
           ),
         )
@@ -50,33 +50,28 @@ class VolumeScreen extends StatelessWidget {
 
 final List<OptionItemModel> _options = [
     OptionItemModel(
-      pathImage: Assets.envelope,
-      title: Volume.envelope.name,
-      type: Volume.envelope,
+      pathImage: Assets.balance,
+      title: Weight.one.name,
+      type: Weight.one,
     ),
     OptionItemModel(
-      pathImage: Assets.book,
-      title: Volume.book.name,
-      type: Volume.book,
+      pathImage: Assets.balance,
+      title: Weight.five.name,
+      type: Weight.five,
     ),
     OptionItemModel(
-      pathImage: Assets.shoeBox,
-      title: Volume.shoeBox.name,
-      type: Volume.shoeBox,
+      pathImage: Assets.balance,
+      title: Weight.tem.name,
+      type: Weight.tem,
     ),
     OptionItemModel(
-      pathImage: Assets.schoolbag,
-      title: Volume.schoolbag.name,
-      type: Volume.schoolbag,
+      pathImage: Assets.balance,
+      title: Weight.twenty.name,
+      type: Weight.twenty,
     ),
     OptionItemModel(
-      pathImage: Assets.suitcase,
-      title: Volume.bigSuitcase.name,
-      type: Volume.bigSuitcase,
-    ),
-    OptionItemModel(
-      pathImage: Assets.bigBox,
-      title: Volume.bigBox.name,
-      type: Volume.bigBox,
+      pathImage: Assets.balance,
+      title: Weight.other.name,
+      type: Weight.other,
     ),
   ];

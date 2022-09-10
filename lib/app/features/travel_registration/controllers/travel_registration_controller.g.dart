@@ -10,6 +10,22 @@ part of 'travel_registration_controller.dart';
 
 mixin _$TravelRegistrationController
     on TravelRegistrationControllerBase, Store {
+  late final _$showMapAtom =
+      Atom(name: 'TravelRegistrationControllerBase.showMap', context: context);
+
+  @override
+  bool get showMap {
+    _$showMapAtom.reportRead();
+    return super.showMap;
+  }
+
+  @override
+  set showMap(bool value) {
+    _$showMapAtom.reportWrite(value, super.showMap, () {
+      super.showMap = value;
+    });
+  }
+
   late final _$transportTypeAtom = Atom(
       name: 'TravelRegistrationControllerBase.transportType', context: context);
 
@@ -39,6 +55,22 @@ mixin _$TravelRegistrationController
   set volumeType(Volume value) {
     _$volumeTypeAtom.reportWrite(value, super.volumeType, () {
       super.volumeType = value;
+    });
+  }
+
+  late final _$weightAtom =
+      Atom(name: 'TravelRegistrationControllerBase.weight', context: context);
+
+  @override
+  Weight get weight {
+    _$weightAtom.reportRead();
+    return super.weight;
+  }
+
+  @override
+  set weight(Weight value) {
+    _$weightAtom.reportWrite(value, super.weight, () {
+      super.weight = value;
     });
   }
 
@@ -88,6 +120,18 @@ mixin _$TravelRegistrationController
   }
 
   @override
+  void setWeightType(Weight? value) {
+    final _$actionInfo = _$TravelRegistrationControllerBaseActionController
+        .startAction(name: 'TravelRegistrationControllerBase.setWeightType');
+    try {
+      return super.setWeightType(value);
+    } finally {
+      _$TravelRegistrationControllerBaseActionController
+          .endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void setTabItemSelected(ItemSelected value) {
     final _$actionInfo =
         _$TravelRegistrationControllerBaseActionController.startAction(
@@ -127,8 +171,10 @@ mixin _$TravelRegistrationController
   @override
   String toString() {
     return '''
+showMap: ${showMap},
 transportType: ${transportType},
 volumeType: ${volumeType},
+weight: ${weight},
 tabItemSelected: ${tabItemSelected}
     ''';
   }

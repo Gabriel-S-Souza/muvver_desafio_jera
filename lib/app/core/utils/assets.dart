@@ -18,4 +18,5 @@ class Assets {
   static const String envelope = 'assets/images/ic_email@2x.png';
   static const String suitcase = 'assets/images/ic_mala@2x.png';
   static const String shoeBox = 'assets/images/ic_box@2x.png';
+  static const String balance = 'assets/images/ic_balance 1@2x.png';
 }

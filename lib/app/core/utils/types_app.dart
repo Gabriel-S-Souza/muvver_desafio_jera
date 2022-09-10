@@ -26,3 +26,15 @@ enum Volume {
 
   final String name;
 }
+
+enum Weight {
+  one(name: 'Até 1 Kg'),
+  five(name: 'Até 5 Kg'),
+  tem(name: 'Até 10 Kg'),
+  twenty(name: 'Até 20 Kg'),
+  other(name: 'Outro');
+
+  const Weight({required this.name});
+
+  final String name;
+}

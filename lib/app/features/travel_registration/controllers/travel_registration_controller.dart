@@ -33,6 +33,9 @@ abstract class TravelRegistrationControllerBase
   List<String> _suggestions = [];
 
   Timer? _debounce;
+
+  @observable
+  bool showMap = false;
   
   @observable
   MeansOfTransport transportType = MeansOfTransport.car;
@@ -47,13 +50,24 @@ abstract class TravelRegistrationControllerBase
   @action
   void setVolumeType(Volume? value) => 
       volumeType = value ?? Volume.envelope;
+  
+  @observable
+  Weight weight = Weight.one;
+
+  @action
+  void setWeightType(Weight? value) => 
+      weight = value ?? Weight.one;
 
   @observable
   ItemSelected tabItemSelected = ItemSelected.routes;
 
   @action
-  void setTabItemSelected(ItemSelected value) => 
+  void setTabItemSelected(ItemSelected value) {
+    if (tabItemSelected != value) {
       tabItemSelected = value;
+      showMap = !showMap;
+    }
+  }
   
   ObservableList<String> midpoints = ObservableList<String>();
 
@@ -75,6 +89,8 @@ abstract class TravelRegistrationControllerBase
   void goToMidpointForm(BuildContext context) => Navigator.of(context).pushNamed('/midpoint_form');
 
   void goToVolume(BuildContext context) => Navigator.of(context).pushNamed('/volume');
+  
+  void goToWeight(BuildContext context) => Navigator.of(context).pushNamed('/weight');
 
   void onChangedPlaces(String value) {
     if (value.isNotEmpty) {

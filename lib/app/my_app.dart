@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/travel_path': (BuildContext context) => TravelPathScreen(),
         '/midpoint_form': (BuildContext context) => MidpointScreen(),
         '/volume': (BuildContext context) => VolumeScreen(),
+        '/weight': (BuildContext context) => WeightScreen(),
       },
       initialRoute: '/home',
     );
