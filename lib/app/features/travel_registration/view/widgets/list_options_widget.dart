@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-
-import '../../../../app.dart';
-import '../../../../core/core.dart';
 import '../../models/models.dart';
 
 class ListOptionsWidget extends StatelessWidget {
   const ListOptionsWidget({
     Key? key, 
     required this.title, 
-    required this.options,
-    required this.controller
+    required this.options, 
+    required this.onChanged, 
+    this.value, this.groupValue,
   }) : super(key: key);
   final String title;
   final List<OptionItemModel> options;
-  final TravelRegistrationController controller;
+  final void Function(dynamic) onChanged;
+  final dynamic value;
+  final dynamic groupValue;
 
   @override
   Widget build(BuildContext context) => ListView(
@@ -32,8 +31,7 @@ class ListOptionsWidget extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => ListTile(
-            onTap: () => controller.setTransportType(
-                options[index].transportType),
+            onTap: () => onChanged(options[index].type),
             contentPadding: const EdgeInsets
                 .symmetric(vertical: 12, horizontal: 0),
             title: Row(
@@ -46,12 +44,10 @@ class ListOptionsWidget extends StatelessWidget {
                     color: Theme.of(context).colorScheme.secondary
                   ),
                 ),
-                Observer(
-                  builder: (context) => Radio<MeansOfTransport>(
-                      value: options[index].transportType, 
-                      groupValue: controller.transportType, 
-                      onChanged: controller.setTransportType
-                    )
+                Radio(
+                  value: options[index].type, 
+                  groupValue: groupValue, 
+                  onChanged: onChanged
                 )
               ],
             ),
