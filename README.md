@@ -1,16 +1,6 @@
 # muvver
 
-A new Flutter project.
+https://user-images.githubusercontent.com/94877176/189465187-4b71067d-58f7-4fee-b01a-c5e60aece902.mp4
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/94877176/189465186-798c8494-5df6-4d32-80a3-c1db5dfa9fe3.mp4
