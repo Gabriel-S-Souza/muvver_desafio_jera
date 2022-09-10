@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
             Locale('pt', 'BR'),
       ],
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => HomeView(),
+        '/home': (BuildContext context) => HomeScreen(),
         '/means_of_transport': (BuildContext context) => MeansOfTransportScreen(),
         '/travel_path': (BuildContext context) => TravelPathScreen(),
         '/midpoint_form': (BuildContext context) => MidpointScreen(),

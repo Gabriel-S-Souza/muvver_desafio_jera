@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../core/core.dart';
-import 'widgets/widgets.dart';
+import '../../../core/core.dart';
+import '../widgets/widgets.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key) {
+class HomeScreen extends StatelessWidget {
+  HomeScreen({Key? key}) : super(key: key) {
   _setStatusBarColor();
   }
 
