@@ -6,6 +6,5 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   ServiceLocator.setupLocator();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
   runApp(const MyApp());
 }

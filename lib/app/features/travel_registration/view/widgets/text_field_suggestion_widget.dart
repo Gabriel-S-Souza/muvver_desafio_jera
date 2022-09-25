@@ -63,11 +63,9 @@ class TextFieldSuggestionWidget extends StatefulWidget {
   final Widget Function(BuildContext, dynamic) itemBuilder;
   final void Function(String) onSuggestionSelected;
   final FutureOr<Iterable<String>> Function(String) suggestionsCallback;
-
+  
   @override
-  // ignore: library_private_types_in_public_api
-  _TextFieldSuggestionWidgetState createState() => 
-      _TextFieldSuggestionWidgetState();
+  State<StatefulWidget> createState() => _TextFieldSuggestionWidgetState();
 }
 
 class _TextFieldSuggestionWidgetState extends State<TextFieldSuggestionWidget> {

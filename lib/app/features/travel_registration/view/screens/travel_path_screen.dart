@@ -31,18 +31,14 @@ class TravelPathScreen extends StatelessWidget {
             bottomHeight: MediaQuery.of(context).size.height * 0.134,
           ),
           body: Observer(
-            builder: (context) => Padding(
-                padding: const EdgeInsets.only(
-                  top: 0,
-                  left: 16,
-                  right: 16
-                ),
-                child: !_controller.showMap
-                    ? _TravelPathForm(
-                      controller: _controller,
-                    )
-                    : const _Map()
-              )
+            builder: (context) => !_controller.showMap
+                ? Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                  child: _TravelPathForm(
+                    controller: _controller,
+                  ),
+                )
+                : const MapWidget()
           ),
           bottomNavigationBar: BottomFixedWidget(
             child: ButtonAppWidget(
@@ -270,16 +266,4 @@ class _MidpointList extends StatelessWidget {
         )
       ),
   );
-}
-
-class _Map extends StatelessWidget {
-  const _Map({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Center(
-      child: Text(
-        'TODO: implement the map',
-        style: Theme.of(context).textTheme.bodyText1,
-      )
-    );
 }
