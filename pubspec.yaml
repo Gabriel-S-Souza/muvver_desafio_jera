@@ -23,6 +23,10 @@ dependencies:
   # places
   google_place: ^0.4.7
 
+  # map
+  google_maps_flutter: ^2.2.0
+  flutter_polyline_points: ^1.0.0
+
   # layoult utilities
   auto_size_text: ^3.0.0
   flutter_typeahead: ^4.1.0

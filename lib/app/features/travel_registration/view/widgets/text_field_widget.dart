@@ -54,10 +54,9 @@ class TextFieldWidget extends StatefulWidget {
   final double? height;
   final bool readOnly;
   final EdgeInsetsGeometry? margin;
-
+  
   @override
-  // ignore: library_private_types_in_public_api
-  _TextFieldWidgetState createState() => _TextFieldWidgetState();
+  State<StatefulWidget> createState() => _TextFieldWidgetState();
 }
 
 class _TextFieldWidgetState extends State<TextFieldWidget> {
